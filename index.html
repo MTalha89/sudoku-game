@@ -268,9 +268,18 @@
         </div>
         <div class="sudoku-board">
             <h2>Sudoku Puzzle</h2>
-            <div class="parent-board">
+            <div class="controls-parent" style="display:flex;">
+            <p id="timer"><span>⏱️</span> 00:00</p>
+            <p id="score"><span>🏆</span> 0</p>
+            <p id="hints"><span></span> <span id="hint-count">💡💡💡</span></p>
+            <p id="lives"><span></span> <span id="life-count">❤️❤️❤️</span></p>
+            <p id="progress"><span>🧩</span> 0/81</p>
+            <div id="progress-bar"><div id="progress-fill" style="width: 0%;"></div>
+            </div>
+                
+            <div class="parent-board" style="display:flex;">
             <div id="board"></div>
-            <div class="number-selection">
+            <div class="number-selection" style="flex-direction: column;">
                 <button class="num-btn" data-value="1">1</button>
                 <button class="num-btn" data-value="2">2</button>
                 <button class="num-btn" data-value="3">3</button>
@@ -288,13 +297,7 @@
                 <button id="notes">Notes: Off</button>
                 <button id="reset">Reset</button>
                 <button id="new-game">New Game</button>
-            </div>
-            <p id="timer"><span>⏱️</span> 00:00</p>
-            <p id="score"><span>🏆</span> 0</p>
-            <p id="hints"><span></span> <span id="hint-count">💡💡💡</span></p>
-            <p id="lives"><span></span> <span id="life-count">❤️❤️❤️</span></p>
-            <p id="progress"><span>🧩</span> 0/81</p>
-            <div id="progress-bar"><div id="progress-fill" style="width: 0%;"></div></div>
+            </div></div>
         </div>
     </div>
     <script>
