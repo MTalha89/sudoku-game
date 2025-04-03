@@ -204,7 +204,8 @@
             font-weight: 700;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 221, 235, 0.5);
-            flex: 1 1 60px;
+            /* flex: 1 1 60px; */
+            flex: 1 1 auto;
         }
         .num-btn:hover, .controls button:hover {
             background: linear-gradient(45deg, #00b8d4, #33d9ff);
@@ -212,7 +213,8 @@
             box-shadow: 0 8px 20px rgba(0, 221, 235, 0.8);
         }
         #timer, #progress, #score, #hints, #lives {
-            margin-top: 15px;
+            margin-bottom: 20px;
+            margin-top: 0px;
             font-size: clamp(1.2rem, 3vw, 1.5rem);
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
             display: flex;
@@ -234,6 +236,24 @@
             background: linear-gradient(90deg, #ff3366, #ff6699);
             transition: width 0.5s ease;
         }
+        .number-selection {
+            flex-direction: column;
+        }
+        .parent-board{
+            gap: 10px;
+            display: flex;
+        }
+        .control-par {
+            display: flex;
+        }
+        #timer, #score, #hints, #lives{
+            flex: 1;
+        }
+        .parent-progress {
+            padding: 0px 40px;
+            display: flex;
+            align-items: center;
+        }
         @media (max-width: 600px) {
             #board {
                 max-width: 90vw;
@@ -242,7 +262,8 @@
                 flex: 1 1 100px;
             }
             .num-btn, .controls button {
-                flex: 1 1 50px;
+                /* flex: 1 1 50px; */
+                flex: 1 1 auto;
                 padding: clamp(8px, 1.5vw, 12px) clamp(15px, 2vw, 20px);
             }
             h1 {
@@ -254,9 +275,9 @@
 <body>
     <div id="particles"></div>
     <div class="game-container">
-        <header>
+        <!-- <header>
             <h1>3D Sudoku Game</h1>
-        </header>
+        </header> -->
         <div class="level-selection">
             <h2>Select Difficulty</h2>
             <div class="levels">
@@ -267,7 +288,16 @@
             </div>
         </div>
         <div class="sudoku-board">
-            <h2>Sudoku Puzzle</h2>
+            <!-- <h2>Sudoku Puzzle</h2> -->
+             <div class="controls-parent">
+                <div class="control-par">
+            <p id="timer"><span>⏱️</span> 00:00</p>
+            <p id="score"><span>🏆</span> 0</p>
+            <p id="hints"><span></span> <span id="hint-count">💡💡💡</span></p>
+            <p id="lives"><span></span> <span id="life-count">❤️❤️❤️</span></p></div>
+            <div class="parent-progress">
+            <p id="progress"><span>🧩</span> 0/81</p>
+            <div id="progress-bar"><div id="progress-fill" style="width: 0%;"></div></div></div></div>
             <div class="parent-board">
             <div id="board"></div>
             <div class="number-selection">
@@ -289,12 +319,7 @@
                 <button id="reset">Reset</button>
                 <button id="new-game">New Game</button>
             </div>
-            <p id="timer"><span>⏱️</span> 00:00</p>
-            <p id="score"><span>🏆</span> 0</p>
-            <p id="hints"><span></span> <span id="hint-count">💡💡💡</span></p>
-            <p id="lives"><span></span> <span id="life-count">❤️❤️❤️</span></p>
-            <p id="progress"><span>🧩</span> 0/81</p>
-            <div id="progress-bar"><div id="progress-fill" style="width: 0%;"></div></div>
+
         </div>
     </div>
     <script>
